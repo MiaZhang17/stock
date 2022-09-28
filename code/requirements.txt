@@ -1,0 +1,9 @@
+mplfinance
+ipykernel
+requests
+beautifulsoup4
+fake-useragent
+yfinance
+openpyxl
+seaborn
+tqdm

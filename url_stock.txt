@@ -1,0 +1,11 @@
+https://www.twse.com.tw/zh/page/trading/exchange/FMNPTK.html
+
+https://www.twse.com.tw/exchangeReport/FMNPTK?response=csv&stockNo=0050
+
+年度	成交股數	成交金額	成交筆數	最高價	日期	最低價	日期	收盤平均價
+https://www.twse.com.tw/exchangeReport/FMNPTK?response=html&stockNo=0050
+
+
+https://www.cmoney.tw/finance/f00041.aspx?s=2317
+
+https://goodinfo.tw/StockInfo/StockFinDetail.asp?RPT_CAT=XX_M_QUAR_ACC&STOCK_ID=2330
