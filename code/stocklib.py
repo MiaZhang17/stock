@@ -25,7 +25,7 @@ def get_otc(d_today):
     from dateutil.relativedelta import relativedelta
     today_tw = d_today - relativedelta(years=1911)
     s_today_tw = today_tw.strftime("%Y/%m/%d").lstrip('0')
-    url = 'https://www.tpex.org.tw/web/stock/3insti/sitc_trading/sitctr_result.php?l=zh-tw&t=D&type=buy&d={}&o=htm'.format(s_today_tw)
+    url = r'https://www.tpex.org.tw/web/stock/3insti/sitc_trading/sitctr_result.php?l=zh-tw&t=D&type=buy&d={}&o=htm'.format(s_today_tw)
     tables = pd.read_html(url)
     df_otc_add = tables[0]
     df_otc_add = df_otc_add.iloc[:-1, 1:6]
@@ -48,11 +48,15 @@ def get_OTC_price(stock_id):
 
 def get_investor(d_today):
     s_today = d_today.strftime("%Y%m%d")
-    url = 'https://www.twse.com.tw/fund/T86?response=html&date={}&selectType=ALL'.format(s_today)
+    # 換網址了?2023/3/21
+    # url = 'https://www.twse.com.tw/fund/T86?response=html&date={}&selectType=ALL'.format()
+    url = 'https://www.twse.com.tw/rwd/zh/fund/TWT38U?date={}&response=html'.format(s_today)
     tables = pd.read_html(url)
     df = tables[0]
-    lst_col = [0,4,10,14,17]
-    lst_colname = ['id', 'investor', 'trust', 'dealer_T', 'dealer_F']
+    # lst_col = [0,4,10,14,17]
+    # lst_colname = ['id', 'investor', 'trust', 'dealer_T', 'dealer_F']
+    lst_col = [1,5,8]
+    lst_colname = ['id', 'investor', 'trust']
     df = df.iloc[:, lst_col]
     df.columns = lst_colname
     df.set_index('id', inplace=True)
